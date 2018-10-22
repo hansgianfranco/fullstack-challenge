@@ -1,0 +1,43 @@
+// Libraries and helpers
+// ---------
+@import 'lib/lib';
+@import 'utils/globals';
+@import 'utils/fonts';
+@import 'utils/mixins';
+@import 'helpers/helpers';
+
+// Variables
+// ---------
+@import 'variables/colors';
+@import 'variables/typography';
+@import 'variables/breakpoints';
+
+// Bootstrap
+// ----------
+@import '~bootstrap/scss/bootstrap';
+
+// FontAwesome
+// ----------
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+// Reset and base files
+// --------------------
+@import 'base/base';
+
+// Layouts
+// -------
+@import 'layouts/layouts';
+
+// Utilities
+// ----------
+@import 'utilities';
+
+// Blocks
+// ----------
+@import 'blocks/general';
+@import 'blocks/header';
+@import 'blocks/footer';
+@import 'blocks/project';

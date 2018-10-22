@@ -1,0 +1,59 @@
+@mixin placeholder($color,$fam){
+  ::-webkit-input-placeholder { color: $color; font-family: $fam; }
+  :-moz-placeholder { color: $color; font-family: $fam; }
+  ::-moz-placeholder { color: $color; font-family: $fam; }
+  :-ms-input-placeholder { color: $color; font-family: $fam; }
+}
+
+
+@mixin transition-all(){
+  transition: ease all 0.3s;
+}
+
+@mixin clearfix(){
+  zoom: 1;
+  &:after,
+  &:before{
+    content: "";
+    display: table;
+  }
+  &:after{
+    clear: both
+  }
+}
+
+@mixin responsive(){
+  display: block;
+  width: auto;
+}
+
+@mixin img(){
+  img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+@mixin inline-block($p){
+  display: inline-block;
+  vertical-align: $p;
+}
+
+@mixin bg-cover(){
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+@mixin img-res(){
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@mixin list-un(){
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}

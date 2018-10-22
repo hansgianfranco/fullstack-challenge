@@ -1,0 +1,257 @@
+.control-label{
+  color: $secondary;
+  line-height: 0.8em;
+}
+
+.input-group-text{
+  background: $white;
+  border: 1px solid $primary;
+  color: $primary;
+}
+
+.btn{
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  min-width: 140px;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  &.btn-secondary{
+    background: transparent;
+    box-shadow: inset 0 0 0 2px $primary;
+    color: $primary;
+    &:hover{
+      background: $primary;
+      color: $white;
+    }
+  }
+}
+
+.form-control{
+  border-radius: 0;
+  border-color: $primary;
+  &:focus{
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.bootstrap-tagsinput{
+  box-shadow: none;
+  border-radius: 0;
+  border: 1px solid $primary;
+  .badge{
+    font-weight: 400;
+    [data-role="remove"]{
+      &:after{
+        background-color: transparent;
+      }
+      &:hover{
+        &:after{
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+}
+
+.form-select{
+  position: relative;
+  select{
+    appearance: none;
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    bottom: 0;
+    right: 13px;
+    margin: auto;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 10px solid $primary;
+    z-index: 1;
+  }
+}
+
+.form-group{
+  &.bg-primary{
+    background: transparent;
+    @include placeholder($white,$font-family-sans-serif);
+    .form-control{
+      background: $primary;
+      color: $white;
+    }
+  }
+  .btn{
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+.card{
+  border: 0;
+}
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.dropzone {
+  border: 1px dashed #979797;
+  background: white;
+  position: relative;
+
+  text-align: center;
+  .image-preview{
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    padding: 56px;
+  }
+  .dropzone-target{
+    display: block;
+    margin-bottom: 0;
+    &.dropped{
+      .icon-upload{
+        opacity: 0;
+        color: $secondary;
+        @include transition;
+      }
+      &:hover{
+        .icon-upload{
+          opacity: 0.8;
+        }
+      }
+    }
+    .icon-upload{
+      font-size: 5em;
+      color: #E8E8E8;
+    }
+  }
+
+  .file-input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    appearance: none;
+    opacity: 0;
+  }
+}
+
+.crud-controls{
+  @include list-un;
+  li{
+    margin-left: 11px;
+    margin-right: 11px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .crud-show{
+    a{
+      color: $danger;
+    }
+  }
+  .crud-edit{
+    a{
+      color: $primary;
+    }
+  }
+  .crud-delete{
+    a{
+      color: $danger;
+    }
+  }
+}
+
+.modal-content{
+  background: transparent;
+  border: 0;
+  .modal-header{
+    border-bottom: 0;
+  }
+  .modal-header{
+    .close{
+      color: $white;
+      @include transition;
+      &:hover{
+        color: $white;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.table{
+  .thead{
+    background: transparent !important;
+    tr{
+      th{
+        background: $primary;
+        &:first-child{
+          text-align: center;
+          border-top-left-radius: 8px;
+        }
+        &:last-child{
+          border-top-right-radius: 8px;
+        }
+      }
+    }
+  }
+}
+
+.title{
+  text-align: center;
+  margin-bottom: 18px;
+  h1{
+    font-size: 1.5em;
+  }
+}
+
+
+
+.page-header{
+  margin-bottom: 50px;
+  h1{
+    font-size: 1.250em;
+    font-weight: 700;
+  }
+  .breadcrumb{
+    background: transparent;
+    padding: 0;
+    margin-bottom: 0;
+    a{
+      text-decoration: underline;
+      &:hover{
+        color: $secondary;
+      }
+    }
+  }
+  .breadcrumb-item + .breadcrumb-item::before {
+    content: '>';
+    color: $primary;
+  }
+}
+
+.custom-file-label:after{
+  content: "\e909";
+  font-family: 'icomoon';
+  background-color: transparent;
+  border-radius: 0;
+  border: 0;
+}
