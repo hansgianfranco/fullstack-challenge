@@ -15,7 +15,7 @@ class CreateReviewsTable extends Migration {
 			$table->tinyInteger('relationship');
 			$table->tinyInteger('initiative');
             $table->tinyInteger('productivity');
-            $table->boolean('performance');
+            $table->float('performance', 8, 2);
 			$table->timestamps();
 		});
 

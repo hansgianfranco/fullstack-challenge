@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Review;
 use App\Models\Division;
 use App\Models\Gender;
+use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -20,6 +21,7 @@ class EmployeeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware(['role:manager']);
     }
 
    /**
@@ -68,11 +70,15 @@ class EmployeeController extends Controller
       if ($validator->fails()) {
           return back()->withErrors($validator)->withInput();
       } else {
+
+          $role_employee = Role::where('name', 'employee')->first();
+
           $user = new User();
           $user->username = $request->username;
           $user->email = $request->email;
           $user->password = bcrypt($request->password);
           $user->save();
+          $user->roles()->attach($role_employee);
 
           $employee = new Employee();
           $employee->user_id = $user->id;
@@ -159,7 +165,6 @@ class EmployeeController extends Controller
   public function destroy($id)
   {
       Employee::destroy($id);
-
       return redirect()->route('employee.index');
   }
   
